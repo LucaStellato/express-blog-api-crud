@@ -3,21 +3,19 @@ const router = express.Router();
 const posts = require('../posts')
 const postController = require('../controllers/postController')
 //index
-router.get('/', postController.index)
+router.get('/', postController.index);
 
 //show
-router.get('/:id', postController.show)
+router.get('/:id', postController.show);
 
 //store
-router.post('/', postController.store)
+router.post('/', postController.store);
 
 //update
-router.put('/:id', postController.update)
-
-//modify
-router.patch('/:id', postController.modify)
+router.put('/:id', postController.update);
 
 //destroy
-router.delete('/:id', postController.destroy)
+router.delete('/:id', postController.destroy);
 
-module.exports = router;
+module.exports = router
+
