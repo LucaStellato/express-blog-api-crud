@@ -1,4 +1,4 @@
-const posts = require('../posts')
+const posts = require('../posts');
 
 function index(req, res) {
     //res.send('Lista dei post')
