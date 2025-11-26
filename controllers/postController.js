@@ -7,6 +7,12 @@ function index(req, res) {
 function show(req, res) {
     const id = parseInt(req.params.id)
     const post = posts.find(post => post.id === id)
+    if (!post) {
+        return req.json({
+            error: 'Not Found',
+            message: 'Post non trovato'
+        })
+    }
 }
 function store(req, res) {
     res.send('creazione nuovo post')
