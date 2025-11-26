@@ -23,7 +23,17 @@ function update(req, res) {
     res.send('modifica dei post')
 }
 function destroy(req, res) {
-    res.send('eliminazione post')
+    const id = parseInt(req.params.id)
+    const post = posts.find(post => post.id === id);
+
+    if (!pizza) {
+        res.status(404);
+        return res.json({
+            status: 404,
+            error: "Not Found",
+            message: "post non trovato"
+        })
+    }
 
 }
 
