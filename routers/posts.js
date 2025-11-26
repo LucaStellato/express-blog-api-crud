@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router();
 const posts = require('../posts')
+const postController = require('../controllers/postController')
 //index
 router.get('/', function (req, res) {
     //res.send('Lista dei post')
