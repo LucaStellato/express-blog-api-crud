@@ -2,8 +2,20 @@ const posts = require('../data/posts');
 
 function index(req, res) {
     //res.send('Lista dei post')
-    res.json(posts);
+    const tag = req.params.tags
+    const post = posts.find(post => post.tags.includes(tag));
+
+    if (!post) {
+        res.status(404);
+        return res.json({
+            status: 404,
+            error: "Not Found",
+            message: "nessun contenuto"
+        })
+    }
+    res.json(post)
 }
+
 function show(req, res) {
     const id = parseInt(req.params.id)
     const post = posts.find(post => post.id === id)
@@ -14,7 +26,7 @@ function show(req, res) {
             message: 'Post non trovato'
         })
     }
-    res.json(post)
+
 }
 function store(req, res) {
     res.send('creazione nuovo post')

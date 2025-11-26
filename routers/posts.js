@@ -3,7 +3,7 @@ const router = express.Router();
 const posts = require('../data/posts')
 const postController = require('../controllers/postController')
 //index
-router.get('/', postController.index);
+router.get('/:tags', postController.index);
 
 //show
 router.get('/:id', postController.show);
