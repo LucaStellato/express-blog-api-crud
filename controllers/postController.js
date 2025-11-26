@@ -6,6 +6,7 @@ function index(req, res) {
 }
 function show(req, res) {
     const id = parseInt(req.params.id)
+    const post = posts.find(post => post.id === id)
 }
 function store(req, res) {
     res.send('creazione nuovo post')
