@@ -31,7 +31,7 @@ function destroy(req, res) {
         return res.json({
             status: 404,
             error: "Not Found",
-            message: "post non trovato"
+            message: "nessun contenuto"
         })
     }
     posts.splice(posts.indexOf(post), 1)
