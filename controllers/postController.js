@@ -26,7 +26,7 @@ function destroy(req, res) {
     const id = parseInt(req.params.id)
     const post = posts.find(post => post.id === id);
 
-    if (!pizza) {
+    if (!post) {
         res.status(404);
         return res.json({
             status: 404,
@@ -34,7 +34,7 @@ function destroy(req, res) {
             message: "post non trovato"
         })
     }
-
+    posts.splice(posts.indexOf(post), 1)
 }
 
 module.exports = { index, show, store, update, destroy }
