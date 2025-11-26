@@ -13,6 +13,7 @@ function show(req, res) {
             message: 'Post non trovato'
         })
     }
+    res.json(post)
 }
 function store(req, res) {
     res.send('creazione nuovo post')
