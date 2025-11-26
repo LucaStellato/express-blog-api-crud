@@ -35,6 +35,7 @@ function destroy(req, res) {
         })
     }
     posts.splice(posts.indexOf(post), 1)
+    res.sendStatus(204)
 }
 
 module.exports = { index, show, store, update, destroy }
