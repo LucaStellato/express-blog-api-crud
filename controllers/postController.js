@@ -5,7 +5,7 @@ function index(req, res) {
     res.json(posts);
 }
 function show(req, res) {
-    res.json(posts[req.params.id - 1])
+    const id = parseInt(req.params.id)
 }
 function store(req, res) {
     res.send('creazione nuovo post')
