@@ -1,19 +1,13 @@
 const posts = require('../data/posts');
 
 function index(req, res) {
-    //res.send('Lista dei post')
-    const tag = req.params.tags
-    const post = posts.find(post => post.tags.includes(tag));
-
-    if (!post) {
-        res.status(404);
-        return res.json({
-            status: 404,
-            error: "Not Found",
-            message: "nessun contenuto"
-        })
+    let filteredPost = posts
+    if (req.query.tags) {
+        filteredPost = posts.filter(
+            post => post.tags.includes(req.query.tags)
+        )
     }
-    res.json(post)
+    res.json(filteredPost)
 }
 
 function show(req, res) {
