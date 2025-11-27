@@ -23,7 +23,7 @@ function show(req, res) {
 
 }
 function store(req, res) {
-    console.log(req.body)
+    //console.log(req.body)
 
     const newId = posts[posts.length - 1].id + 1;
     const newPost = {
@@ -38,9 +38,10 @@ function store(req, res) {
     res.status(201)
     res.json(newPost)
 
+
 }
 function update(req, res) {
-    res.send('modifica dei post')
+    const id = parseInt(req.params.id)
 }
 function destroy(req, res) {
     const id = parseInt(req.params.id)
