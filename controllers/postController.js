@@ -23,7 +23,7 @@ function show(req, res) {
 
 }
 function store(req, res) {
-    res.send('creazione nuovo post')
+    console.log(req.body)
 }
 function update(req, res) {
     res.send('modifica dei post')
