@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router();
 const posts = require('../data/posts')
 const postController = require('../controllers/postController')
+app.use(express.json());
 //index
 router.get('/', postController.index);
 
