@@ -3,6 +3,7 @@ const app = express()
 const port = 3000
 const postsRouter = require('./routers/posts')
 const errorHandler = require('./middleware/errorHandler')
+const notFound = require('./middleware/errorHandler')
 app.use(express.json());
 
 
@@ -47,4 +48,4 @@ app.delete('/posts/:id', function (req, res) {
     */
 
 
-app.use(errorHandler);
+app.use(notFound);
