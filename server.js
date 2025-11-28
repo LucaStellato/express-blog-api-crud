@@ -45,3 +45,6 @@ app.delete('/posts/:id', function (req, res) {
     res.send('eliminazione post')
 })
     */
+
+
+app.use(errorHandler);
